@@ -1,0 +1,256 @@
+package com.example.nobiderjiboni;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ClipDrawable;
+import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
+import android.os.Bundle;
+import android.text.Layout;
+import android.view.Gravity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.PopupMenu;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+public class MainActivity extends AppCompatActivity {
+    AlertDialog alertDialog;
+    Button homemain_btn;
+    FloatingActionButton home_floting_btn;
+    ImageView emailid;
+    ImageView ytid;
+    ImageView fbid;
+    ImageView twterid;
+    ImageView webid;
+
+    // popup dialog button define
+    Dialog myDialog;
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        myDialog = new Dialog(this); // popup dialog difine
+
+
+
+        homemain_btn = (Button) findViewById(R.id.homemain_btn);
+        homemain_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(MainActivity.this,AppDeshbord.class);
+                Toast.makeText(MainActivity.this, "Please with...", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+            // email shere btn action code stert here
+        emailid = (ImageView) findViewById(R.id.emailid);
+        emailid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent mailIntent = new Intent(Intent.ACTION_VIEW);
+                Toast.makeText(MainActivity.this, "Just with a few Secound..", Toast.LENGTH_SHORT).show();
+                Uri data = Uri.parse("mailto:?subject=" + "বিখ্যাত নবীদের জীবনী APP"+ "&body=" + "Hey! Your email text here/এখান থেকে আপনার লেখা শুরু করুন" + "&to=" + "touhedulislam250@gmail.com");
+                mailIntent.setData(data);
+                startActivity(Intent.createChooser(mailIntent, "Send mail....."));
+            }
+        });
+        // email shere btn action code end here
+
+
+
+        // youtube shere btn action code stert here
+        ytid = (ImageView) findViewById(R.id.ytid);
+        ytid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent mailIntent = new Intent(Intent.ACTION_VIEW);
+                Uri data = Uri.parse("https://www.youtube.com");
+                mailIntent.setData(data);
+                startActivity(Intent.createChooser(mailIntent, "Lunch Youtube....."));
+            }
+        });
+        // youtube shere btn action code end here
+
+
+
+        // Facebook shere btn action code stert here
+        fbid = (ImageView) findViewById(R.id.fbid);
+        fbid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent mailIntent = new Intent(Intent.ACTION_VIEW);
+                Uri data = Uri.parse("https://www.facebook.com");
+                mailIntent.setData(data);
+                startActivity(Intent.createChooser(mailIntent, "Lunch Facebook....."));
+            }
+        });
+        // Facebook shere btn action code end here
+
+
+
+
+        // Twitter shere btn action code stert here
+        twterid = (ImageView) findViewById(R.id.twterid);
+        twterid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent mailIntent = new Intent(Intent.ACTION_VIEW);
+                Uri data = Uri.parse("https://www.twtter.com");
+                mailIntent.setData(data);
+                startActivity(Intent.createChooser(mailIntent, "Lunch Twitter....."));
+            }
+        });
+        // Twitter shere btn action code end here
+
+
+
+        // website shere btn action code stert here
+        webid = (ImageView) findViewById(R.id.webid);
+        webid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent mailIntent = new Intent(Intent.ACTION_VIEW);
+                Toast.makeText(MainActivity.this, "ওয়েব সাইটে নিয়ে যাওয়া হচ্ছে..", Toast.LENGTH_LONG).show();
+                Uri data = Uri.parse("https://freelancertauhid.blogspot.com");
+                mailIntent.setData(data);
+                startActivity(Intent.createChooser(mailIntent, "Design Buzz LTD....."));
+            }
+        });
+        // website shere btn action code end here
+
+
+
+
+
+
+        // Floting share btn start
+        home_floting_btn = (FloatingActionButton) findViewById(R.id.home_floting_btn);
+        home_floting_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                String shareBody="Download this Applicatin:-#=en";
+                String sharesub=" বিখ্যাত নবীদের জীবনী";
+
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT,sharesub);
+                shareIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
+                startActivity(Intent.createChooser(shareIntent,"Share On/শেয়ার করুন "));
+            }
+        });
+        // Floting share btn end
+
+
+
+
+
+
+
+
+
+
+    }
+    // popup button code start here
+    public void ShowPopup(View V){
+        TextView cross_id;
+        Button folloew_id;
+        LinearLayout about_appid;
+        myDialog.setContentView(R.layout.coustompopup);
+
+        //Hook popup
+        cross_id = (TextView) myDialog.findViewById(R.id.cross_id);
+        folloew_id = (Button) myDialog.findViewById(R.id.folloew_id);
+        about_appid = (LinearLayout) myDialog.findViewById(R.id.about_appid);
+
+        // cross Button listener
+        cross_id.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                myDialog.dismiss();
+            }
+        });
+
+        //........... follow button listener
+
+        folloew_id.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "is click", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        //............. About App listener
+
+        about_appid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+               Toast toast = Toast.makeText(MainActivity.this, "Abute app is clicd", Toast.LENGTH_SHORT);
+               toast.setGravity(Gravity.CENTER,0,0);
+               toast.show();
+            }
+        });
+
+
+
+
+        myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        Toast.makeText(this, "Option Manu", Toast.LENGTH_SHORT).show();
+        myDialog.show();
+
+        // popup button code end here
+
+    }
+
+    //Alart dialog box code stert
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("আপনি কি অ্যাপ থেকে বের হতে চাচ্ছেন?\n\n আমাদের অ্যাপটি যদি আপনাদের ভালো লাগে, তাহলে রেটিং দিয়ে আমাদেরকে উৎসাহিত করন।")
+                .setCancelable(false)
+                .setPositiveButton("হ্যা", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        MainActivity.super.onBackPressed();
+
+
+                    }
+                })
+                .setNegativeButton("না", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                        dialogInterface.cancel();
+                    }
+                });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+
+
+
+    }
+    //Alart dialog box code end
+}

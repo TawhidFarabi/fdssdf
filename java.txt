@@ -1,0 +1,359 @@
+package com.example.nobiderjiboni;
+
+
+import androidx.activity.OnBackPressedDispatcher;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.GridLayout;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.text.DateFormat;
+import java.util.Calendar;
+
+public class AppDeshbord extends AppCompatActivity {
+
+ CardView adomcardviewid;
+ CardView mohammadcardviewid;
+ CardView yasacardviewid;
+ CardView younuscardview;
+ CardView edriscardview;
+ CardView ibrahimcardview;
+ CardView   yakubcardview;
+ CardView eliyascardview;
+ CardView ismailcardview,ishaqcardview,isacardview,salehcardview,daudcardview,nuhcardview,musacardview;
+ CardView jakariacardview,julkifolcardview,lutcardview,soyaibcardview,sulaimancardview,hudcardview,seskothacardview;
+
+
+
+
+
+    FloatingActionButton desbord_floting_btn;
+    TextView des_subtextid;
+
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_app_deshbord);
+
+        // Text date coding stert here
+        Calendar calendar = Calendar.getInstance();
+        String currentDate = DateFormat.getDateInstance(DateFormat.DATE_FIELD).format(calendar.getTime());
+        TextView textViewDate = findViewById(R.id.test_calanderid);
+        textViewDate.setText(currentDate);
+
+        // Text date coding end here
+        
+        des_subtextid = (TextView) findViewById(R.id.des_subtextid) ;
+        des_subtextid.setSelected(true);
+
+
+
+        adomcardviewid = (CardView) findViewById(R.id.adomcardviewid);
+        adomcardviewid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AppDeshbord.this,hozrotadom.class);
+                Toast.makeText(AppDeshbord.this, "হযরত আদম (আ:) এর জীবনী", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+
+
+            }
+        });
+
+
+
+        mohammadcardviewid = (CardView) findViewById(R.id.mohammadcardviewid);
+        mohammadcardviewid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AppDeshbord.this,HozrotMuhammad.class);
+                Toast.makeText(AppDeshbord.this, "হযরত মুহাম্মদ (সাঃ)এর  জীবনী ", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+
+
+
+            }
+        });
+
+        yasacardviewid = (CardView) findViewById(R.id.yasacardviewid);
+        yasacardviewid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AppDeshbord.this,yasah.class);
+                Toast.makeText(AppDeshbord.this, "হযরত আল-ইয়াসা (আ:)এর  জীবনী ...", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+
+
+
+            }
+        });
+
+
+
+        younuscardview = (CardView) findViewById(R.id.younuscardview);
+        younuscardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AppDeshbord.this,HozrotYounus.class);
+                Toast.makeText(AppDeshbord.this, "হযরত ইউনুস (আ:)এর জীবনী", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+
+
+        edriscardview = (CardView) findViewById(R.id.edriscardview);
+        edriscardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AppDeshbord.this,HozrotIdrish.class);
+                Toast.makeText(AppDeshbord.this, "হযরত ইদরীস (আ:)এর জীবনী", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+
+        ibrahimcardview = (CardView) findViewById(R.id.ibrahimcardview);
+        ibrahimcardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AppDeshbord.this,Ibrahim.class);
+                Toast.makeText(AppDeshbord.this, "হযরত ইবরাহীম (আ:)এর জীবনী", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+
+
+
+        yakubcardview = (CardView) findViewById(R.id.yakubcardview);
+        yakubcardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AppDeshbord.this,Yakub.class);
+                Toast.makeText(AppDeshbord.this, "হযরত ইয়াকূব (আ:)এর জীবনী", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+
+
+        eliyascardview = (CardView) findViewById(R.id.eliyascardview);
+        eliyascardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AppDeshbord.this,Eiliyas.class);
+                Toast.makeText(AppDeshbord.this, "হযরত ইলিয়াস (আ:)এর জীবনী", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+
+
+
+        ismailcardview = (CardView) findViewById(R.id.ismailcardview);
+        ismailcardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AppDeshbord.this,Ismail.class);
+                Toast.makeText(AppDeshbord.this, "হযরত ইসমাঈল (আ:)এর জীবনী", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+
+        isacardview = (CardView) findViewById(R.id.isacardview);
+        isacardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AppDeshbord.this,Isa.class);
+                Toast.makeText(AppDeshbord.this, "হযরত ঈসা (আ:)এর জীবনী", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+
+            }
+        });
+
+
+        ishaqcardview = (CardView) findViewById(R.id.ishaqcardview);
+        ishaqcardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AppDeshbord.this,Ishaque.class);
+                Toast.makeText(AppDeshbord.this, "হযরত ইসহাক (আ:)এর জীবনী..", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+
+
+
+            }
+        });
+
+
+        salehcardview = (CardView) findViewById(R.id.salehcardview);
+        salehcardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AppDeshbord.this,Saleh.class);
+                Toast.makeText(AppDeshbord.this, "হযরত ছালেহ (আঃ) এর জীবনী", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+
+
+            }
+        });
+
+        daudcardview = (CardView) findViewById(R.id.daudcardview);
+        daudcardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AppDeshbord.this,Dawud.class);
+                Toast.makeText(AppDeshbord.this, "হযরত দাঊদ (আঃ) এর জীবনী", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+
+        nuhcardview = (CardView) findViewById(R.id.nuhcardview);
+        nuhcardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AppDeshbord.this,Nuh.class);
+                Toast.makeText(AppDeshbord.this, "হযরত নূহ (আঃ)এর জীবনী", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+
+        musacardview = (CardView) findViewById(R.id.musacardview);
+        musacardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AppDeshbord.this,Musa.class);
+                Toast.makeText(AppDeshbord.this, "হযরত মূসা ,এবং হারূণ (আ:)", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+
+        jakariacardview = (CardView) findViewById(R.id.jakariacardview);
+        jakariacardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AppDeshbord.this,Jakariya.class);
+                Toast.makeText(AppDeshbord.this, "হযরত যাকারিয়া ও ইয়াহইয়া (আ:)এর জীবনী", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+
+        julkifolcardview = (CardView) findViewById(R.id.julkifolcardview);
+        julkifolcardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AppDeshbord.this,Julkifol.class);
+                Toast.makeText(AppDeshbord.this, "হযরত যুল-কিফল (আ:) এর জীবনী", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+
+
+        lutcardview = (CardView) findViewById(R.id.lutcardview);
+        lutcardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AppDeshbord.this,Luth.class);
+                Toast.makeText(AppDeshbord.this, "হযরত লূত (আ:) এর জীবনী", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+
+        soyaibcardview = (CardView) findViewById(R.id.soyaibcardview);
+        soyaibcardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AppDeshbord.this,Shoyaib.class);
+                Toast.makeText(AppDeshbord.this, "হযরত শো‘আয়েব (আ:) এর জীবনী", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+
+        sulaimancardview = (CardView) findViewById(R.id.sulaimancardview);
+        sulaimancardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AppDeshbord.this,Sulaiman.class);
+                Toast.makeText(AppDeshbord.this, "হযরত সুলায়মান (আ:)এর জীবনী", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+
+
+        hudcardview = (CardView) findViewById(R.id.hudcardview);
+        hudcardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(AppDeshbord.this,Hud.class);
+                Toast.makeText(AppDeshbord.this, "হযরত হূদ (আ:)এর জীবনী", Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
+
+
+
+
+
+        // Floting share btn start
+        desbord_floting_btn = (FloatingActionButton) findViewById(R.id.desbord_floting_btn);
+        desbord_floting_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent shareIntent = new Intent(Intent.ACTION_SEND);
+                shareIntent.setType("text/plain");
+                String shareBody="Download this Applicatin:-#=en";
+                String sharesub="Android app Development course";
+
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT,sharesub);
+                shareIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
+                startActivity(Intent.createChooser(shareIntent,"Share On"));
+            }
+        });
+        // Floting share btn end
+
+
+
+    }
+
+}
